@@ -280,8 +280,8 @@ export const HomePage: React.FC<HomePageProps> = ({
           </Link>
         </div>
 
-        {/* 6 Course Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* 6 Course Grid (Exact Reference 6-Column Layout) */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 sm:gap-4.5">
           {displayCourses.map(course => (
             <CourseCard
               key={course.id}
