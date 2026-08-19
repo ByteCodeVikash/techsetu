@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import {
   GraduationCap, Code, BarChart3, Bot, Video, BookOpen, Award, CheckCircle2,
-  Users, Download, ShieldCheck, Star, Check, ArrowRight
+  Users, Download, ShieldCheck, Star, Check, ArrowRight, UserCheck
 } from 'lucide-react';
 import { CourseCard } from '../components/CourseCard';
 import { COURSES } from '../data/courses';
@@ -71,7 +71,7 @@ export const HomePage: React.FC<HomePageProps> = ({
               {/* Bottom Feature Badges */}
               <div className="pt-6 border-t border-slate-200/70 grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs font-medium text-slate-700">
                 <div className="flex items-center gap-2">
-                  <Users className="w-4 h-4 text-blue-600 shrink-0" />
+                  <UserCheck className="w-4 h-4 text-blue-600 shrink-0" />
                   <span>Expert Instructors</span>
                 </div>
                 <div className="flex items-center gap-2">
@@ -94,18 +94,18 @@ export const HomePage: React.FC<HomePageProps> = ({
             <div className="lg:col-span-5 relative flex items-center justify-center lg:justify-end">
               <div className="relative w-full max-w-md lg:max-w-none">
                 
-                {/* Main Hero Photo */}
+                {/* Main Hero Photo (Professional learning at desk with lamp) */}
                 <div className="rounded-2xl overflow-hidden shadow-lg border border-slate-200/80 bg-slate-900 h-[380px] sm:h-[440px]">
                   <img
-                    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=1000&q=80"
-                    alt="TechSetu Student Learning"
+                    src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1000&q=80"
+                    alt="TechSetu Professional Student Learning"
                     className="w-full h-full object-cover opacity-95"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-transparent"></div>
                 </div>
 
                 {/* Floating Info Widget Card (Right Side) */}
-                <div className="absolute top-6 right-[-10px] sm:right-[-20px] bg-white/95 backdrop-blur-md rounded-2xl shadow-xl border border-slate-100 p-4 space-y-3.5 text-xs w-60">
+                <div className="absolute top-6 right-[-10px] sm:right-[-20px] bg-white/95 backdrop-blur-md rounded-2xl shadow-xl border border-slate-100 p-4 space-y-3.5 text-xs w-60 z-10">
                   
                   <div className="flex items-center gap-3">
                     <div className="w-8 h-8 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center shrink-0">
@@ -426,14 +426,37 @@ export const HomePage: React.FC<HomePageProps> = ({
               </div>
             </div>
 
-            {/* Bottom Visual & CTA */}
+            {/* Bottom Visual & CTA (Smartphone layout with floating Google/FB/IG icons) */}
             <div className="space-y-4 pt-2">
-              <div className="rounded-xl border border-slate-200/80 overflow-hidden shadow-xs h-56 bg-slate-900">
-                <img
-                  src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=800&q=80"
-                  alt="Marketing & AI Analytics App"
-                  className="w-full h-full object-cover opacity-95"
-                />
+              <div className="relative rounded-xl border border-slate-200/80 overflow-hidden shadow-xs h-56 bg-slate-50 flex items-center justify-center">
+                
+                {/* Smartphone screen photo with chart */}
+                <div className="relative w-44 h-48 bg-white rounded-xl shadow-md border border-slate-200 overflow-hidden p-2 flex flex-col justify-between">
+                  <div className="h-full w-full rounded-lg overflow-hidden bg-slate-900">
+                    <img
+                      src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80"
+                      alt="Analytics Mobile Chart"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                </div>
+
+                {/* Floating Social Badges */}
+                {/* Google Badge (Left) */}
+                <div className="absolute left-6 top-10 w-9 h-9 rounded-full bg-white shadow-md border border-slate-100 flex items-center justify-center font-bold text-red-500 text-sm">
+                  G
+                </div>
+
+                {/* Facebook Badge (Right Top) */}
+                <div className="absolute right-8 top-8 w-9 h-9 rounded-full bg-blue-600 text-white shadow-md flex items-center justify-center font-bold text-sm">
+                  f
+                </div>
+
+                {/* Instagram Badge (Right Bottom) */}
+                <div className="absolute right-6 bottom-10 w-9 h-9 rounded-full bg-gradient-to-tr from-amber-500 via-rose-500 to-purple-600 text-white shadow-md flex items-center justify-center font-bold text-xs">
+                  IG
+                </div>
+
               </div>
 
               <button
