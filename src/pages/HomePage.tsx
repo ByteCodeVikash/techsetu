@@ -296,140 +296,123 @@ export const HomePage: React.FC<HomePageProps> = ({
       {/* SECTION 4: DUAL COMMERCIAL BANNER CARDS */}
       {/* ---------------------------------------------------- */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
           
           {/* Card 1: IT SERVICES */}
-          <div className="bg-blue-50/50 rounded-2xl p-6 sm:p-8 border border-blue-100/80 flex flex-col justify-between gap-6">
-            <div className="space-y-4">
-              <span className="text-xs font-bold text-blue-600 uppercase tracking-widest block">
-                IT SERVICES
-              </span>
-              
-              <h3 className="text-2xl font-bold text-slate-900 leading-tight">
-                Technology solutions for your business
-              </h3>
+          <div className="bg-[#f2f6ff] rounded-3xl p-6 sm:p-8 border border-blue-100/80 relative overflow-hidden flex flex-col md:flex-row justify-between items-center min-h-[320px]">
+            {/* Left Content Column */}
+            <div className="space-y-4 max-w-xs sm:max-w-sm z-10 flex flex-col justify-between h-full">
+              <div className="space-y-2">
+                <span className="text-xs font-bold text-blue-600 uppercase tracking-widest block mb-1">
+                  IT SERVICES
+                </span>
+                
+                <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 leading-tight">
+                  Technology solutions for your business
+                </h3>
 
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                We build reliable, scalable and secure digital solutions tailored to your business needs.
-              </p>
+                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed pt-1">
+                  We build reliable, scalable and secure digital solutions tailored to your business needs.
+                </p>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-2.5 pt-2 text-xs font-medium text-slate-700">
-                <div className="flex items-center gap-2">
-                  <Check className="w-4 h-4 text-blue-600 shrink-0" />
-                  <span>Website Development</span>
+                <div className="space-y-2 pt-3 text-xs sm:text-sm font-medium text-slate-700">
+                  <div className="flex items-center gap-2.5">
+                    <Check className="w-4 h-4 text-blue-600 shrink-0 stroke-[2.5]" />
+                    <span>Website Development</span>
+                  </div>
+                  <div className="flex items-center gap-2.5">
+                    <Check className="w-4 h-4 text-blue-600 shrink-0 stroke-[2.5]" />
+                    <span>E-commerce Solutions</span>
+                  </div>
+                  <div className="flex items-center gap-2.5">
+                    <Check className="w-4 h-4 text-blue-600 shrink-0 stroke-[2.5]" />
+                    <span>Custom Software</span>
+                  </div>
+                  <div className="flex items-center gap-2.5">
+                    <Check className="w-4 h-4 text-blue-600 shrink-0 stroke-[2.5]" />
+                    <span>Mobile App Development</span>
+                  </div>
+                  <div className="flex items-center gap-2.5">
+                    <Check className="w-4 h-4 text-blue-600 shrink-0 stroke-[2.5]" />
+                    <span>UI/UX Design</span>
+                  </div>
                 </div>
-                <div className="flex items-center gap-2">
-                  <Check className="w-4 h-4 text-blue-600 shrink-0" />
-                  <span>E-commerce Solutions</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Check className="w-4 h-4 text-blue-600 shrink-0" />
-                  <span>Custom Software</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Check className="w-4 h-4 text-blue-600 shrink-0" />
-                  <span>Mobile App Development</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Check className="w-4 h-4 text-blue-600 shrink-0" />
-                  <span>UI/UX Design</span>
-                </div>
+              </div>
+
+              <div className="pt-5">
+                <button
+                  onClick={() => onOpenInquiry('service', 'Discuss IT Services')}
+                  className="px-6 py-3 text-xs sm:text-sm font-semibold text-white bg-blue-600 hover:bg-blue-700 rounded-xl transition-all shadow-xs"
+                >
+                  Discuss Your Project
+                </button>
               </div>
             </div>
 
-            {/* Bottom Visual & CTA */}
-            <div className="space-y-4 pt-2">
-              <div className="rounded-xl border border-slate-200/80 overflow-hidden shadow-xs h-56 bg-slate-900">
-                <img
-                  src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80"
-                  alt="Software Engineering Team"
-                  className="w-full h-full object-cover opacity-95"
-                />
-              </div>
-
-              <button
-                onClick={() => onOpenInquiry('service', 'Discuss IT Services')}
-                className="px-5 py-2.5 text-xs font-semibold text-white bg-blue-600 hover:bg-blue-700 rounded-lg transition-colors shadow-2xs"
-              >
-                Discuss Your Project
-              </button>
+            {/* Right Side Seamless Image Graphic */}
+            <div className="w-full md:w-[48%] h-60 md:h-full relative mt-6 md:mt-0 flex items-center justify-end">
+              <img
+                src="/banner_it_services.png"
+                alt="IT Services Developer Team"
+                className="w-full h-full object-contain md:object-right"
+              />
             </div>
           </div>
 
           {/* Card 2: DIGITAL MARKETING & AI */}
-          <div className="bg-emerald-50/40 rounded-2xl p-6 sm:p-8 border border-emerald-100/80 flex flex-col justify-between gap-6">
-            <div className="space-y-4">
-              <span className="text-xs font-bold text-emerald-600 uppercase tracking-widest block">
-                DIGITAL MARKETING & AI
-              </span>
+          <div className="bg-[#f0fbf5] rounded-3xl p-6 sm:p-8 border border-emerald-100/80 relative overflow-hidden flex flex-col md:flex-row justify-between items-center min-h-[320px]">
+            {/* Left Content Column */}
+            <div className="space-y-4 max-w-xs sm:max-w-sm z-10 flex flex-col justify-between h-full">
+              <div className="space-y-2">
+                <span className="text-xs font-bold text-emerald-600 uppercase tracking-widest block mb-1">
+                  DIGITAL MARKETING & AI
+                </span>
 
-              <h3 className="text-2xl font-bold text-slate-900 leading-tight">
-                Grow your business with our expertise
-              </h3>
+                <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 leading-tight">
+                  Grow your business with our expertise
+                </h3>
 
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                Data-driven marketing strategies and AI solutions to help you stay ahead.
-              </p>
+                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed pt-1">
+                  Data-driven marketing strategies and AI solutions to help you stay ahead.
+                </p>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-2.5 pt-2 text-xs font-medium text-slate-700">
-                <div className="flex items-center gap-2">
-                  <Check className="w-4 h-4 text-emerald-600 shrink-0" />
-                  <span>SEO & Performance Marketing</span>
+                <div className="space-y-2 pt-3 text-xs sm:text-sm font-medium text-slate-700">
+                  <div className="flex items-center gap-2.5">
+                    <Check className="w-4 h-4 text-emerald-600 shrink-0 stroke-[2.5]" />
+                    <span>SEO & Performance Marketing</span>
+                  </div>
+                  <div className="flex items-center gap-2.5">
+                    <Check className="w-4 h-4 text-emerald-600 shrink-0 stroke-[2.5]" />
+                    <span>Social Media Management</span>
+                  </div>
+                  <div className="flex items-center gap-2.5">
+                    <Check className="w-4 h-4 text-emerald-600 shrink-0 stroke-[2.5]" />
+                    <span>AI Chatbots & Automation</span>
+                  </div>
+                  <div className="flex items-center gap-2.5">
+                    <Check className="w-4 h-4 text-emerald-600 shrink-0 stroke-[2.5]" />
+                    <span>AI-Powered Workflows</span>
+                  </div>
                 </div>
-                <div className="flex items-center gap-2">
-                  <Check className="w-4 h-4 text-emerald-600 shrink-0" />
-                  <span>Social Media Management</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Check className="w-4 h-4 text-emerald-600 shrink-0" />
-                  <span>AI Chatbots & Automation</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Check className="w-4 h-4 text-emerald-600 shrink-0" />
-                  <span>AI-Powered Workflows</span>
-                </div>
+              </div>
+
+              <div className="pt-5">
+                <button
+                  onClick={() => onOpenInquiry('service', 'Discuss Marketing & AI')}
+                  className="px-6 py-3 text-xs sm:text-sm font-semibold text-white bg-emerald-600 hover:bg-emerald-700 rounded-xl transition-all shadow-xs"
+                >
+                  Explore Solutions
+                </button>
               </div>
             </div>
 
-            {/* Bottom Visual & CTA (Smartphone layout with floating Google/FB/IG icons) */}
-            <div className="space-y-4 pt-2">
-              <div className="relative rounded-xl border border-slate-200/80 overflow-hidden shadow-xs h-56 bg-slate-50 flex items-center justify-center">
-                
-                {/* Smartphone screen photo with chart */}
-                <div className="relative w-44 h-48 bg-white rounded-xl shadow-md border border-slate-200 overflow-hidden p-2 flex flex-col justify-between">
-                  <div className="h-full w-full rounded-lg overflow-hidden bg-slate-900">
-                    <img
-                      src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80"
-                      alt="Analytics Mobile Chart"
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                </div>
-
-                {/* Floating Social Badges */}
-                {/* Google Badge (Left) */}
-                <div className="absolute left-6 top-10 w-9 h-9 rounded-full bg-white shadow-md border border-slate-100 flex items-center justify-center font-bold text-red-500 text-sm">
-                  G
-                </div>
-
-                {/* Facebook Badge (Right Top) */}
-                <div className="absolute right-8 top-8 w-9 h-9 rounded-full bg-blue-600 text-white shadow-md flex items-center justify-center font-bold text-sm">
-                  f
-                </div>
-
-                {/* Instagram Badge (Right Bottom) */}
-                <div className="absolute right-6 bottom-10 w-9 h-9 rounded-full bg-gradient-to-tr from-amber-500 via-rose-500 to-purple-600 text-white shadow-md flex items-center justify-center font-bold text-xs">
-                  IG
-                </div>
-
-              </div>
-
-              <button
-                onClick={() => onOpenInquiry('service', 'Discuss Marketing & AI')}
-                className="px-5 py-2.5 text-xs font-semibold text-white bg-emerald-600 hover:bg-emerald-700 rounded-lg transition-colors shadow-2xs"
-              >
-                Explore Solutions
-              </button>
+            {/* Right Side 3D Mobile Artwork Graphic */}
+            <div className="w-full md:w-[48%] h-60 md:h-full relative mt-6 md:mt-0 flex items-center justify-end">
+              <img
+                src="/banner_marketing_ai.png"
+                alt="Digital Marketing & AI Solutions"
+                className="w-full h-full object-contain md:object-right"
+              />
             </div>
           </div>
 
@@ -439,45 +422,45 @@ export const HomePage: React.FC<HomePageProps> = ({
       {/* ---------------------------------------------------- */}
       {/* SECTION 5: STATISTICS STRIP */}
       {/* ---------------------------------------------------- */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-white rounded-2xl border border-slate-200/80 p-6 sm:p-8 shadow-2xs grid grid-cols-2 md:grid-cols-4 gap-6 text-center md:text-left">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 items-center justify-between">
           
           <div className="flex items-center gap-4">
-            <div className="w-12 h-12 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center shrink-0">
-              <Users className="w-6 h-6" />
+            <div className="w-12 h-12 rounded-2xl bg-blue-50/80 text-blue-600 flex items-center justify-center shrink-0 border border-blue-100/60 shadow-2xs">
+              <Users className="w-5 h-5 stroke-[2.2]" />
             </div>
             <div>
-              <div className="text-2xl font-extrabold text-slate-900">10K+</div>
+              <div className="text-2xl font-black text-slate-900 tracking-tight">10K+</div>
               <div className="text-xs text-slate-500 font-medium">Happy Learners</div>
             </div>
           </div>
 
           <div className="flex items-center gap-4">
-            <div className="w-12 h-12 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center shrink-0">
-              <Users className="w-6 h-6" />
+            <div className="w-12 h-12 rounded-2xl bg-blue-50/80 text-blue-600 flex items-center justify-center shrink-0 border border-blue-100/60 shadow-2xs">
+              <Users className="w-5 h-5 stroke-[2.2]" />
             </div>
             <div>
-              <div className="text-2xl font-extrabold text-slate-900">200+</div>
+              <div className="text-2xl font-black text-slate-900 tracking-tight">200+</div>
               <div className="text-xs text-slate-500 font-medium">Expert Instructors</div>
             </div>
           </div>
 
           <div className="flex items-center gap-4">
-            <div className="w-12 h-12 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center shrink-0">
-              <BookOpen className="w-6 h-6" />
+            <div className="w-12 h-12 rounded-2xl bg-blue-50/80 text-blue-600 flex items-center justify-center shrink-0 border border-blue-100/60 shadow-2xs">
+              <BookOpen className="w-5 h-5 stroke-[2.2]" />
             </div>
             <div>
-              <div className="text-2xl font-extrabold text-slate-900">100+</div>
+              <div className="text-2xl font-black text-slate-900 tracking-tight">100+</div>
               <div className="text-xs text-slate-500 font-medium">Courses</div>
             </div>
           </div>
 
           <div className="flex items-center gap-4">
-            <div className="w-12 h-12 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center shrink-0">
-              <ShieldCheck className="w-6 h-6" />
+            <div className="w-12 h-12 rounded-2xl bg-blue-50/80 text-blue-600 flex items-center justify-center shrink-0 border border-blue-100/60 shadow-2xs">
+              <ShieldCheck className="w-5 h-5 stroke-[2.2]" />
             </div>
             <div>
-              <div className="text-2xl font-extrabold text-slate-900">95%</div>
+              <div className="text-2xl font-black text-slate-900 tracking-tight">95%</div>
               <div className="text-xs text-slate-500 font-medium">Satisfaction Rate</div>
             </div>
           </div>
