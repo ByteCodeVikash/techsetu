@@ -16,6 +16,7 @@ export const COURSES: Course[] = [
     duration: '16 Weeks • Live + Recorded',
     level: 'Beginner to Advanced',
     format: 'Live Cohort',
+    image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80',
     badge: 'Bestseller',
     featured: true,
     instructor: {
@@ -47,6 +48,7 @@ export const COURSES: Course[] = [
     duration: '12 Weeks • Live + Projects',
     level: 'Intermediate',
     format: 'Live Cohort',
+    image: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80',
     badge: 'Hot & Trending',
     featured: true,
     instructor: {
@@ -78,6 +80,7 @@ export const COURSES: Course[] = [
     duration: '10 Weeks • Self-Paced + Live Q&A',
     level: 'All Levels',
     format: 'Hybrid',
+    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80',
     badge: 'High ROI',
     featured: true,
     instructor: {
@@ -109,8 +112,9 @@ export const COURSES: Course[] = [
     duration: '12 Weeks • Self-Paced',
     level: 'Beginner',
     format: 'Self-Paced',
+    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80',
     badge: 'Career Starter',
-    featured: false,
+    featured: true,
     instructor: {
       name: 'Neha Kapoor',
       role: 'Senior Data Strategist',
@@ -139,6 +143,7 @@ export const COURSES: Course[] = [
     duration: '8 Weeks • Live Cohort',
     level: 'Intermediate',
     format: 'Live Cohort',
+    image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80',
     badge: 'Executive',
     featured: true,
     instructor: {
@@ -169,8 +174,9 @@ export const COURSES: Course[] = [
     duration: '8 Weeks • Live + Trading Simulator',
     level: 'Beginner to Intermediate',
     format: 'Live Cohort',
+    image: 'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=800&q=80',
     badge: 'Popular',
-    featured: false,
+    featured: true,
     instructor: {
       name: 'Karan Verma',
       role: 'Full-Time Derivatives Trader',

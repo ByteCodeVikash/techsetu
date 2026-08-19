@@ -19,6 +19,7 @@ export interface Course {
   duration: string;
   level: string;
   format: string;
+  image?: string;
   badge?: string;
   featured?: boolean;
   instructor: Instructor;
@@ -64,6 +65,7 @@ export interface ServiceItem {
   category: 'it' | 'marketing' | 'ai';
   description: string;
   iconName: string;
+  image?: string;
   features: string[];
 }
 
