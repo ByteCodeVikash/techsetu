@@ -16,7 +16,7 @@ export const COURSES: Course[] = [
     duration: '16 Weeks • Live + Recorded',
     level: 'Beginner to Advanced',
     format: 'Live Cohort',
-    image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80',
+    image: '/course_thumb_1.png',
     badge: 'Bestseller',
     featured: true,
     instructor: {
@@ -48,7 +48,7 @@ export const COURSES: Course[] = [
     duration: '12 Weeks • Live + Projects',
     level: 'Intermediate',
     format: 'Live Cohort',
-    image: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=800&q=80',
+    image: '/course_thumb_2.png',
     featured: true,
     instructor: {
       name: 'Dr. Ananya Sharma',
@@ -78,7 +78,7 @@ export const COURSES: Course[] = [
     duration: '14 Weeks • Live Cohort',
     level: 'Advanced',
     format: 'Live Cohort',
-    image: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80',
+    image: '/course_thumb_3.png',
     featured: true,
     instructor: {
       name: 'Dr. Ananya Sharma',
@@ -108,7 +108,7 @@ export const COURSES: Course[] = [
     duration: '10 Weeks • Self-Paced',
     level: 'All Levels',
     format: 'Hybrid',
-    image: 'https://images.unsplash.com/photo-1557838923-2985c318be48?auto=format&fit=crop&w=800&q=80',
+    image: '/course_thumb_4.png',
     featured: true,
     instructor: {
       name: 'Rohan Mehta',
@@ -138,7 +138,7 @@ export const COURSES: Course[] = [
     duration: '12 Weeks • Self-Paced',
     level: 'Beginner',
     format: 'Self-Paced',
-    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80',
+    image: '/course_thumb_5.png',
     featured: true,
     instructor: {
       name: 'Neha Kapoor',
@@ -168,7 +168,7 @@ export const COURSES: Course[] = [
     duration: '8 Weeks • Live Cohort',
     level: 'Beginner to Intermediate',
     format: 'Live Cohort',
-    image: 'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=800&q=80',
+    image: '/course_thumb_6.png',
     badge: 'New',
     featured: true,
     instructor: {

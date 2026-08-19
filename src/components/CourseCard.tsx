@@ -26,7 +26,7 @@ export const CourseCard: React.FC<CourseCardProps> = ({ course, onSelect }) => {
           />
 
           {/* Badge Overlay */}
-          {course.badge && (
+          {course.badge && !course.image?.includes('/course_thumb_') && (
             <div
               className={`absolute top-2.5 left-2.5 text-white text-[10px] font-bold px-2.5 py-0.5 rounded-md shadow-xs ${
                 isOrangeBadge ? 'bg-amber-500' : 'bg-blue-600'
