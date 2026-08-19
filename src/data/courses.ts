@@ -78,7 +78,7 @@ export const COURSES: Course[] = [
     duration: '14 Weeks • Live Cohort',
     level: 'Advanced',
     format: 'Live Cohort',
-    image: 'https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=800&q=80',
     featured: true,
     instructor: {
       name: 'Dr. Ananya Sharma',

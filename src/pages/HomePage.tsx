@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import {
   GraduationCap, Code, BarChart3, Bot, BookOpen, Award, CheckCircle2,
-  Users, Download, ShieldCheck, Star, Check, ArrowRight, UserCheck, MonitorPlay
+  Users, ShieldCheck, Star, Check, ArrowRight, UserCheck, MonitorPlay
 } from 'lucide-react';
 import { CourseCard } from '../components/CourseCard';
 import { COURSES } from '../data/courses';
@@ -511,7 +511,7 @@ export const HomePage: React.FC<HomePageProps> = ({
 
           <div className="flex items-center gap-4">
             <div className="w-12 h-12 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center shrink-0">
-              <Download className="w-6 h-6" />
+              <BookOpen className="w-6 h-6" />
             </div>
             <div>
               <div className="text-2xl font-extrabold text-slate-900">100+</div>
