@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import {
   GraduationCap, Code, BarChart3, Bot, BookOpen, Award, CheckCircle2,
-  Users, ShieldCheck, Star, Check, ArrowRight, UserCheck, MonitorPlay
+  Users, ShieldCheck, Star, Check, ArrowRight, UserCheck
 } from 'lucide-react';
 import { CourseCard } from '../components/CourseCard';
 import { COURSES } from '../data/courses';
@@ -98,59 +98,16 @@ export const HomePage: React.FC<HomePageProps> = ({
 
             </div>
 
-            {/* Right Column Visual (Cropped Reference Student Image + Floating Widget Card) */}
+            {/* Right Column Visual (Exact Pixel-Perfect Reference Visual Asset) */}
             <div className="lg:col-span-5 relative flex items-center justify-center lg:justify-end">
-              <div className="relative w-full max-w-md lg:max-w-none">
-                
-                {/* Main Hero Photo (Exact developer at desk photo) */}
-                <div className="rounded-2xl overflow-hidden shadow-xl border border-slate-200/80 bg-slate-900 h-[380px] sm:h-[440px]">
+              <div className="relative w-full max-w-lg">
+                <div className="rounded-2xl overflow-hidden shadow-2xl border border-slate-200/60 bg-white">
                   <img
                     src="/hero_man_desk.png"
-                    alt="TechSetu Professional Student Learning"
-                    className="w-full h-full object-cover opacity-95"
-                    onError={(e) => {
-                      // Fallback if local asset is loading
-                      (e.target as HTMLImageElement).src = "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1000&q=80";
-                    }}
+                    alt="TechSetu Professional Learning Platform"
+                    className="w-full h-auto object-cover"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/30 via-transparent to-transparent"></div>
                 </div>
-
-                {/* Floating Info Widget Card (Right Side Overlay) */}
-                <div className="absolute top-8 right-[-10px] sm:right-[-20px] bg-white/95 backdrop-blur-md rounded-2xl shadow-2xl border border-slate-100 p-4 space-y-4 text-xs w-60 z-20">
-                  
-                  <div className="flex items-center gap-3">
-                    <div className="w-9 h-9 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center shrink-0">
-                      <MonitorPlay className="w-4.5 h-4.5" />
-                    </div>
-                    <div>
-                      <div className="font-bold text-slate-900">Live Classes</div>
-                      <div className="text-[10px] text-slate-500 leading-tight">Join interactive sessions with experts</div>
-                    </div>
-                  </div>
-
-                  <div className="flex items-center gap-3 pt-1 border-t border-slate-100">
-                    <div className="w-9 h-9 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center shrink-0">
-                      <BookOpen className="w-4.5 h-4.5" />
-                    </div>
-                    <div>
-                      <div className="font-bold text-slate-900">100+ Courses</div>
-                      <div className="text-[10px] text-slate-500 leading-tight">Across multiple domains</div>
-                    </div>
-                  </div>
-
-                  <div className="flex items-center gap-3 pt-1 border-t border-slate-100">
-                    <div className="w-9 h-9 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center shrink-0">
-                      <Award className="w-4.5 h-4.5" />
-                    </div>
-                    <div>
-                      <div className="font-bold text-slate-900">Certificates</div>
-                      <div className="text-[10px] text-slate-500 leading-tight">Showcase your achievements</div>
-                    </div>
-                  </div>
-
-                </div>
-
               </div>
             </div>
 
