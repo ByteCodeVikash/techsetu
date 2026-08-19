@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import {
-  BookOpen, Code, TrendingUp, Cpu, CheckCircle2, ShieldCheck, Target, Users, Star, Award, Check
+  GraduationCap, Code, BarChart3, Bot, Video, BookOpen, Award, CheckCircle2,
+  Users, Download, ShieldCheck, Star, Check, ArrowRight
 } from 'lucide-react';
 import { CourseCard } from '../components/CourseCard';
 import { COURSES } from '../data/courses';
@@ -14,9 +15,9 @@ interface HomePageProps {
 }
 
 export const HomePage: React.FC<HomePageProps> = ({
-  onSelectCourse
+  onSelectCourse,
+  onOpenInquiry
 }) => {
-  // Select featured courses for the education section
   const displayCourses = COURSES.slice(0, 6);
   const displayTestimonials = TESTIMONIALS.slice(0, 3);
 
@@ -24,591 +25,574 @@ export const HomePage: React.FC<HomePageProps> = ({
     <div className="space-y-16 sm:space-y-24 pb-16">
       
       {/* ---------------------------------------------------- */}
-      {/* SECTION 1: HERO (With Subtle Background Tint & Visual Composition) */}
+      {/* SECTION 1: HERO SECTION */}
       {/* ---------------------------------------------------- */}
-      <section className="relative pt-10 sm:pt-16 pb-12 sm:pb-20 bg-gradient-to-b from-slate-50 via-blue-50/30 to-white border-b border-slate-200">
+      <section className="relative pt-8 sm:pt-14 pb-12 sm:pb-20 bg-gradient-to-b from-blue-50/30 via-slate-50/40 to-white border-b border-slate-200/60">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
             
-            {/* Left Content Column */}
-            <div className="lg:col-span-6 space-y-6">
-              <div className="inline-flex items-center gap-2 px-3 py-1 bg-blue-100/80 border border-blue-200 rounded-full">
-                <span className="w-2 h-2 rounded-full bg-blue-600 animate-pulse"></span>
-                <span className="text-xs font-bold text-blue-800 tracking-wide uppercase">
-                  TECHSETU
-                </span>
+            {/* Left Column Content */}
+            <div className="lg:col-span-7 space-y-6">
+              
+              {/* Pill Badge */}
+              <div className="inline-flex items-center gap-2 px-3 py-1 bg-blue-50 text-blue-600 border border-blue-100 rounded-full text-xs font-semibold">
+                <span className="w-2 h-2 rounded-full bg-blue-600"></span>
+                <span>Trusted by 10K+ Learners</span>
               </div>
 
-              <h1 className="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight leading-[1.15]">
-                Bridge to <span className="text-blue-600">Future Skills</span>
+              {/* Main Heading */}
+              <h1 className="text-4xl sm:text-6xl font-extrabold text-slate-900 tracking-tight leading-[1.1]">
+                Bridge to <br className="hidden sm:inline" />
+                <span className="text-blue-600">Future Skills</span>
               </h1>
 
+              {/* Subtitle */}
               <p className="text-base sm:text-lg text-slate-600 leading-relaxed max-w-xl">
                 Learn practical skills, build your career and grow your business with technology.
               </p>
 
-              <div className="flex flex-wrap items-center gap-3 pt-2">
+              {/* Buttons */}
+              <div className="flex flex-wrap items-center gap-3 pt-1">
                 <Link
                   to="/courses"
-                  className="px-6 py-3 text-sm font-semibold text-white bg-blue-600 hover:bg-blue-700 rounded-md transition-colors shadow-2xs"
+                  className="px-6 py-3 text-sm font-semibold text-white bg-blue-600 hover:bg-blue-700 rounded-lg transition-colors shadow-2xs"
                 >
                   Explore Courses
                 </Link>
 
                 <Link
                   to="/services"
-                  className="px-6 py-3 text-sm font-semibold text-slate-700 bg-white hover:bg-slate-100 border border-slate-300 rounded-md transition-colors"
+                  className="px-6 py-3 text-sm font-semibold text-slate-800 bg-white hover:bg-slate-50 border border-slate-200 rounded-lg transition-colors shadow-2xs"
                 >
-                  Explore Services
+                  Our Services
                 </Link>
               </div>
 
-              {/* Mini trust highlights below hero buttons */}
-              <div className="pt-4 border-t border-slate-200/80 grid grid-cols-3 gap-2 text-xs text-slate-600">
-                <div className="flex items-center gap-1.5 font-medium">
-                  <CheckCircle2 className="w-4 h-4 text-blue-600 shrink-0" />
-                  <span>100% Practical</span>
+              {/* Bottom Feature Badges */}
+              <div className="pt-6 border-t border-slate-200/70 grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs font-medium text-slate-700">
+                <div className="flex items-center gap-2">
+                  <Users className="w-4 h-4 text-blue-600 shrink-0" />
+                  <span>Expert Instructors</span>
                 </div>
-                <div className="flex items-center gap-1.5 font-medium">
-                  <CheckCircle2 className="w-4 h-4 text-blue-600 shrink-0" />
-                  <span>Expert Mentors</span>
+                <div className="flex items-center gap-2">
+                  <BookOpen className="w-4 h-4 text-blue-600 shrink-0" />
+                  <span>Practical Learning</span>
                 </div>
-                <div className="flex items-center gap-1.5 font-medium">
+                <div className="flex items-center gap-2">
+                  <Award className="w-4 h-4 text-blue-600 shrink-0" />
+                  <span>Industry Recognized</span>
+                </div>
+                <div className="flex items-center gap-2">
                   <CheckCircle2 className="w-4 h-4 text-blue-600 shrink-0" />
-                  <span>Verified Certificates</span>
+                  <span>Certificates</span>
                 </div>
               </div>
+
             </div>
 
-            {/* Right Visual Column (High Quality Imagery + Polished Floating Badges) */}
-            <div className="lg:col-span-6 relative">
-              <div className="relative rounded-xl overflow-hidden shadow-xl border border-slate-200/80 bg-slate-900 group">
-                <img
-                  src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1000&q=80"
-                  alt="TechSetu Engineering and Learning"
-                  className="w-full h-[380px] sm:h-[440px] object-cover opacity-95 group-hover:scale-102 transition-transform duration-500"
-                />
+            {/* Right Column Visual (Main Student Image + Floating Widget Card) */}
+            <div className="lg:col-span-5 relative flex items-center justify-center lg:justify-end">
+              <div className="relative w-full max-w-md lg:max-w-none">
                 
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-slate-950/20 to-transparent"></div>
-
-                {/* Floating Chip 1: Active Cohort */}
-                <div className="absolute top-4 right-4 bg-white/95 backdrop-blur-md px-3.5 py-2 rounded-lg border border-slate-200 shadow-md flex items-center gap-2.5">
-                  <div className="w-3 h-3 rounded-full bg-emerald-500 animate-ping"></div>
-                  <div>
-                    <div className="text-[11px] font-bold text-slate-900">Live Cohorts Enrolling</div>
-                    <div className="text-[10px] text-slate-500 font-medium">React 19 & Python AI</div>
-                  </div>
+                {/* Main Hero Photo */}
+                <div className="rounded-2xl overflow-hidden shadow-lg border border-slate-200/80 bg-slate-900 h-[380px] sm:h-[440px]">
+                  <img
+                    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=1000&q=80"
+                    alt="TechSetu Student Learning"
+                    className="w-full h-full object-cover opacity-95"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-transparent"></div>
                 </div>
 
-                {/* Floating Chip 2: Enterprise IT Services */}
-                <div className="absolute bottom-4 left-4 right-4 sm:right-auto bg-slate-900/90 backdrop-blur-md text-white px-4 py-3 rounded-lg border border-slate-700 shadow-lg flex items-center justify-between gap-4">
+                {/* Floating Info Widget Card (Right Side) */}
+                <div className="absolute top-6 right-[-10px] sm:right-[-20px] bg-white/95 backdrop-blur-md rounded-2xl shadow-xl border border-slate-100 p-4 space-y-3.5 text-xs w-60">
+                  
                   <div className="flex items-center gap-3">
-                    <div className="w-9 h-9 rounded bg-blue-600 flex items-center justify-center font-bold text-sm">
-                      TS
+                    <div className="w-8 h-8 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center shrink-0">
+                      <Video className="w-4 h-4" />
                     </div>
                     <div>
-                      <div className="text-xs font-bold text-white">TechSetu Solutions Agency</div>
-                      <div className="text-[11px] text-slate-300">Web • Mobile • Marketing • AI</div>
+                      <div className="font-bold text-slate-900">Live Classes</div>
+                      <div className="text-[10px] text-slate-500 leading-tight">Join interactive sessions with experts</div>
                     </div>
                   </div>
-                  <span className="text-[10px] font-bold text-blue-400 bg-blue-950/80 px-2 py-1 rounded border border-blue-800">
-                    Verified
-                  </span>
+
+                  <div className="flex items-center gap-3 pt-1 border-t border-slate-100">
+                    <div className="w-8 h-8 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center shrink-0">
+                      <BookOpen className="w-4 h-4" />
+                    </div>
+                    <div>
+                      <div className="font-bold text-slate-900">100+ Courses</div>
+                      <div className="text-[10px] text-slate-500 leading-tight">Across multiple domains</div>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center gap-3 pt-1 border-t border-slate-100">
+                    <div className="w-8 h-8 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center shrink-0">
+                      <Award className="w-4 h-4" />
+                    </div>
+                    <div>
+                      <div className="font-bold text-slate-900">Certificates</div>
+                      <div className="text-[10px] text-slate-500 leading-tight">Showcase your achievements</div>
+                    </div>
+                  </div>
+
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* ---------------------------------------------------- */}
+      {/* SECTION 2: WHAT WE OFFER (Division Cards) */}
+      {/* ---------------------------------------------------- */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+        <div className="text-center max-w-2xl mx-auto">
+          <span className="text-xs font-bold text-blue-600 uppercase tracking-widest block mb-1">
+            WHAT WE OFFER
+          </span>
+          <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900">
+            Everything you need to learn and grow
+          </h2>
+        </div>
+
+        {/* 4 Cards Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          
+          {/* Card 1: Education */}
+          <div className="bg-white rounded-xl border border-slate-200 overflow-hidden shadow-2xs hover:shadow-md transition-all flex flex-col justify-between group">
+            <div>
+              <div className="relative h-40 bg-slate-100">
+                <img
+                  src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=600&q=80"
+                  alt="Education"
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute -bottom-4 left-4 w-10 h-10 rounded-xl bg-blue-600 text-white flex items-center justify-center shadow-md">
+                  <GraduationCap className="w-5 h-5" />
                 </div>
               </div>
+
+              <div className="p-5 pt-7 space-y-2">
+                <h3 className="text-base font-bold text-slate-900 group-hover:text-blue-600 transition-colors">
+                  Education
+                </h3>
+                <p className="text-xs text-slate-600 leading-relaxed">
+                  Online courses, live classes, recorded lectures and certifications.
+                </p>
+              </div>
             </div>
 
+            <div className="px-5 pb-5 pt-1">
+              <Link to="/courses" className="text-xs font-semibold text-blue-600 hover:text-blue-700 inline-flex items-center gap-1">
+                <span>Explore Education</span>
+                <ArrowRight className="w-3.5 h-3.5" />
+              </Link>
+            </div>
           </div>
+
+          {/* Card 2: IT Services */}
+          <div className="bg-white rounded-xl border border-slate-200 overflow-hidden shadow-2xs hover:shadow-md transition-all flex flex-col justify-between group">
+            <div>
+              <div className="relative h-40 bg-slate-100">
+                <img
+                  src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=600&q=80"
+                  alt="IT Services"
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute -bottom-4 left-4 w-10 h-10 rounded-xl bg-emerald-500 text-white flex items-center justify-center shadow-md">
+                  <Code className="w-5 h-5" />
+                </div>
+              </div>
+
+              <div className="p-5 pt-7 space-y-2">
+                <h3 className="text-base font-bold text-slate-900 group-hover:text-blue-600 transition-colors">
+                  IT Services
+                </h3>
+                <p className="text-xs text-slate-600 leading-relaxed">
+                  Custom software, web, and mobile application development.
+                </p>
+              </div>
+            </div>
+
+            <div className="px-5 pb-5 pt-1">
+              <Link to="/services/it" className="text-xs font-semibold text-blue-600 hover:text-blue-700 inline-flex items-center gap-1">
+                <span>Explore IT Services</span>
+                <ArrowRight className="w-3.5 h-3.5" />
+              </Link>
+            </div>
+          </div>
+
+          {/* Card 3: Digital Marketing */}
+          <div className="bg-white rounded-xl border border-slate-200 overflow-hidden shadow-2xs hover:shadow-md transition-all flex flex-col justify-between group">
+            <div>
+              <div className="relative h-40 bg-slate-100">
+                <img
+                  src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=80"
+                  alt="Digital Marketing"
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute -bottom-4 left-4 w-10 h-10 rounded-xl bg-amber-500 text-white flex items-center justify-center shadow-md">
+                  <BarChart3 className="w-5 h-5" />
+                </div>
+              </div>
+
+              <div className="p-5 pt-7 space-y-2">
+                <h3 className="text-base font-bold text-slate-900 group-hover:text-blue-600 transition-colors">
+                  Digital Marketing
+                </h3>
+                <p className="text-xs text-slate-600 leading-relaxed">
+                  Grow your brand, generate leads and increase your revenue.
+                </p>
+              </div>
+            </div>
+
+            <div className="px-5 pb-5 pt-1">
+              <Link to="/services/digital-marketing" className="text-xs font-semibold text-blue-600 hover:text-blue-700 inline-flex items-center gap-1">
+                <span>Explore Marketing</span>
+                <ArrowRight className="w-3.5 h-3.5" />
+              </Link>
+            </div>
+          </div>
+
+          {/* Card 4: AI Services */}
+          <div className="bg-white rounded-xl border border-slate-200 overflow-hidden shadow-2xs hover:shadow-md transition-all flex flex-col justify-between group">
+            <div>
+              <div className="relative h-40 bg-slate-100">
+                <img
+                  src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=600&q=80"
+                  alt="AI Services"
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute -bottom-4 left-4 w-10 h-10 rounded-xl bg-purple-600 text-white flex items-center justify-center shadow-md">
+                  <Bot className="w-5 h-5" />
+                </div>
+              </div>
+
+              <div className="p-5 pt-7 space-y-2">
+                <h3 className="text-base font-bold text-slate-900 group-hover:text-blue-600 transition-colors">
+                  AI Services
+                </h3>
+                <p className="text-xs text-slate-600 leading-relaxed">
+                  AI chatbots, automation and intelligent business solutions.
+                </p>
+              </div>
+            </div>
+
+            <div className="px-5 pb-5 pt-1">
+              <Link to="/services/ai" className="text-xs font-semibold text-blue-600 hover:text-blue-700 inline-flex items-center gap-1">
+                <span>Explore AI Services</span>
+                <ArrowRight className="w-3.5 h-3.5" />
+              </Link>
+            </div>
+          </div>
+
         </div>
       </section>
 
       {/* ---------------------------------------------------- */}
-      {/* SECTION 2: TRUST STRIP */}
+      {/* SECTION 3: FEATURED COURSES */}
       {/* ---------------------------------------------------- */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-slate-50 rounded-lg border border-slate-200 p-4 sm:p-6 grid grid-cols-2 lg:grid-cols-4 gap-4 text-xs font-medium text-slate-700">
-          <div className="flex items-center gap-3 p-2 bg-white rounded border border-slate-200">
-            <Users className="w-5 h-5 text-blue-600 shrink-0" />
-            <div>
-              <div className="font-bold text-slate-900">Expert-Led Learning</div>
-              <div className="text-[11px] text-slate-500">Taught by active practitioners</div>
-            </div>
-          </div>
-
-          <div className="flex items-center gap-3 p-2 bg-white rounded border border-slate-200">
-            <Code className="w-5 h-5 text-blue-600 shrink-0" />
-            <div>
-              <div className="font-bold text-slate-900">Practical Projects</div>
-              <div className="text-[11px] text-slate-500">Production-ready source code</div>
-            </div>
-          </div>
-
-          <div className="flex items-center gap-3 p-2 bg-white rounded border border-slate-200">
-            <Target className="w-5 h-5 text-blue-600 shrink-0" />
-            <div>
-              <div className="font-bold text-slate-900">Industry Skills</div>
-              <div className="text-[11px] text-slate-500">Aligned with enterprise hiring</div>
-            </div>
-          </div>
-
-          <div className="flex items-center gap-3 p-2 bg-white rounded border border-slate-200">
-            <Award className="w-5 h-5 text-blue-600 shrink-0" />
-            <div>
-              <div className="font-bold text-slate-900">Verified Certificates</div>
-              <div className="text-[11px] text-slate-500">Sharable credential verification</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ---------------------------------------------------- */}
-      {/* SECTION 3: EDITORIAL OVERVIEW / SERVICES SECTION */}
-      {/* ---------------------------------------------------- */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-          
-          {/* Left Column: Heading & Explanation */}
-          <div className="lg:col-span-4 space-y-4">
-            <span className="text-xs font-bold text-blue-600 uppercase tracking-widest block">
-              OUR DIVISIONS
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
+        <div className="flex items-end justify-between">
+          <div>
+            <span className="text-xs font-bold text-blue-600 uppercase tracking-widest block mb-1">
+              FEATURED COURSES
             </span>
-            <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 leading-tight">
-              Everything you need to learn and grow
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900">
+              Popular courses to accelerate your career
             </h2>
-            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-              TechSetu operates as a unified platform bridging skill development for individuals with end-to-end digital engineering and marketing services for growing businesses.
-            </p>
-
-            <div className="pt-2">
-              <Link
-                to="/services"
-                className="inline-flex items-center gap-1.5 text-xs font-semibold text-blue-600 hover:text-blue-700"
-              >
-                View Full Service Catalog &rarr;
-              </Link>
-            </div>
           </div>
+          <Link
+            to="/courses"
+            className="text-xs font-semibold text-blue-600 hover:text-blue-700 inline-flex items-center gap-1"
+          >
+            <span>View All Courses</span>
+            <ArrowRight className="w-3.5 h-3.5" />
+          </Link>
+        </div>
 
-          {/* Right Column: 4 Visual Cards */}
-          <div className="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
-            {/* Card 1: Education */}
-            <div className="p-5 bg-white rounded-lg border border-slate-200 hover:border-slate-300 transition-all space-y-2.5">
-              <div className="w-9 h-9 rounded bg-blue-50 text-blue-600 flex items-center justify-center">
-                <BookOpen className="w-5 h-5" />
-              </div>
-              <h3 className="text-base font-bold text-slate-900">Education & Bootcamps</h3>
-              <p className="text-xs text-slate-600 leading-relaxed">
-                Practical live cohorts in full-stack web development, Python AI engineering, data analytics, and marketing.
-              </p>
-              <Link to="/courses" className="text-xs font-semibold text-blue-600 hover:underline inline-block pt-1">
-                Browse Courses &rarr;
-              </Link>
-            </div>
-
-            {/* Card 2: IT Services */}
-            <div className="p-5 bg-white rounded-lg border border-slate-200 hover:border-slate-300 transition-all space-y-2.5">
-              <div className="w-9 h-9 rounded bg-blue-50 text-blue-600 flex items-center justify-center">
-                <Code className="w-5 h-5" />
-              </div>
-              <h3 className="text-base font-bold text-slate-900">IT & Software Engineering</h3>
-              <p className="text-xs text-slate-600 leading-relaxed">
-                Custom React & Next.js applications, mobile apps, e-commerce stores, and cloud backend microservices.
-              </p>
-              <Link to="/services/it" className="text-xs font-semibold text-blue-600 hover:underline inline-block pt-1">
-                Explore IT Services &rarr;
-              </Link>
-            </div>
-
-            {/* Card 3: Digital Marketing */}
-            <div className="p-5 bg-white rounded-lg border border-slate-200 hover:border-slate-300 transition-all space-y-2.5">
-              <div className="w-9 h-9 rounded bg-blue-50 text-blue-600 flex items-center justify-center">
-                <TrendingUp className="w-5 h-5" />
-              </div>
-              <h3 className="text-base font-bold text-slate-900">Digital Marketing & SEO</h3>
-              <p className="text-xs text-slate-600 leading-relaxed">
-                Performance SEO, Google Search & Performance Max ads, Meta acquisition funnels, and GA4 analytics.
-              </p>
-              <Link to="/services/digital-marketing" className="text-xs font-semibold text-blue-600 hover:underline inline-block pt-1">
-                Explore Marketing &rarr;
-              </Link>
-            </div>
-
-            {/* Card 4: AI Services */}
-            <div className="p-5 bg-white rounded-lg border border-slate-200 hover:border-slate-300 transition-all space-y-2.5">
-              <div className="w-9 h-9 rounded bg-blue-50 text-blue-600 flex items-center justify-center">
-                <Cpu className="w-5 h-5" />
-              </div>
-              <h3 className="text-base font-bold text-slate-900">AI & Automation</h3>
-              <p className="text-xs text-slate-600 leading-relaxed">
-                Custom document RAG chatbots, LangChain workflows, process automation, and private LLM fine-tuning.
-              </p>
-              <Link to="/services/ai" className="text-xs font-semibold text-blue-600 hover:underline inline-block pt-1">
-                Explore AI Solutions &rarr;
-              </Link>
-            </div>
-          </div>
-
+        {/* 6 Course Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {displayCourses.map(course => (
+            <CourseCard
+              key={course.id}
+              course={course}
+              onSelect={onSelectCourse}
+            />
+          ))}
         </div>
       </section>
 
       {/* ---------------------------------------------------- */}
-      {/* SECTION 4: FEATURED COURSES (Soft Slate-50 Background Rhythm) */}
-      {/* ---------------------------------------------------- */}
-      <section className="bg-slate-50 py-12 sm:py-16 border-y border-slate-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
-          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
-            <div>
-              <span className="text-xs font-bold text-blue-600 uppercase tracking-widest block mb-1">
-                ACADEMY
-              </span>
-              <h2 className="text-2xl sm:text-3xl font-bold text-slate-900">
-                Featured Professional Courses
-              </h2>
-              <p className="text-xs sm:text-sm text-slate-600 mt-1">
-                Hands-on training designed for real engineering skills and career growth.
-              </p>
-            </div>
-            <Link
-              to="/courses"
-              className="px-4 py-2 text-xs font-semibold text-blue-600 bg-white hover:bg-blue-50 border border-slate-300 rounded transition-colors"
-            >
-              View All Courses &rarr;
-            </Link>
-          </div>
-
-          {/* Grid of Courses with Thumbnail Images */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {displayCourses.map(course => (
-              <CourseCard
-                key={course.id}
-                course={course}
-                onSelect={onSelectCourse}
-              />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ---------------------------------------------------- */}
-      {/* SECTION 5: IT SERVICES DIVISION (Commercial 2-Column Layout) */}
+      {/* SECTION 4: DUAL COMMERCIAL BANNER CARDS */}
       {/* ---------------------------------------------------- */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-white rounded-xl border border-slate-200 overflow-hidden grid grid-cols-1 lg:grid-cols-12 gap-0 shadow-2xs">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           
-          {/* Left Column: Technology Visual Image */}
-          <div className="lg:col-span-5 relative min-h-[300px] lg:min-h-[440px] bg-slate-900">
-            <img
-              src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80"
-              alt="TechSetu Software Development Team"
-              className="w-full h-full object-cover opacity-90"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/30 to-transparent"></div>
-            
-            <div className="absolute bottom-6 left-6 right-6 text-white space-y-1">
-              <span className="text-[10px] font-bold text-blue-400 uppercase tracking-widest">
-                SOFTWARE ENGINEERING
-              </span>
-              <h3 className="text-lg font-bold">Enterprise Code Quality</h3>
-              <p className="text-xs text-slate-300">
-                Built with modern React, Next.js, Node.js, and cloud native architecture.
-              </p>
-            </div>
-          </div>
-
-          {/* Right Column: Service Details & Grid */}
-          <div className="lg:col-span-7 p-6 sm:p-8 space-y-6 flex flex-col justify-between">
-            <div>
-              <span className="text-xs font-bold text-blue-600 uppercase tracking-widest block mb-1">
+          {/* Card 1: IT SERVICES */}
+          <div className="bg-blue-50/50 rounded-2xl p-6 sm:p-8 border border-blue-100/80 flex flex-col justify-between gap-6">
+            <div className="space-y-4">
+              <span className="text-xs font-bold text-blue-600 uppercase tracking-widest block">
                 IT SERVICES
               </span>
-              <h2 className="text-2xl sm:text-3xl font-bold text-slate-900">
+              
+              <h3 className="text-2xl font-bold text-slate-900 leading-tight">
                 Technology solutions for your business
-              </h2>
-              <p className="text-xs sm:text-sm text-slate-600 mt-1 leading-relaxed">
-                We engineer scalable custom software, web platforms, and mobile applications tailored to your business operations.
+              </h3>
+
+              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                We build reliable, scalable and secure digital solutions tailored to your business needs.
               </p>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-2.5 pt-2 text-xs font-medium text-slate-700">
+                <div className="flex items-center gap-2">
+                  <Check className="w-4 h-4 text-blue-600 shrink-0" />
+                  <span>Website Development</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Check className="w-4 h-4 text-blue-600 shrink-0" />
+                  <span>E-commerce Solutions</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Check className="w-4 h-4 text-blue-600 shrink-0" />
+                  <span>Custom Software</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Check className="w-4 h-4 text-blue-600 shrink-0" />
+                  <span>Mobile App Development</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Check className="w-4 h-4 text-blue-600 shrink-0" />
+                  <span>UI/UX Design</span>
+                </div>
+              </div>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2 text-xs">
-              <div className="p-3 bg-slate-50 rounded border border-slate-200">
-                <div className="font-bold text-slate-900 mb-0.5">Website Development</div>
-                <div className="text-[11px] text-slate-600">Fast, responsive React & Next.js applications.</div>
+            {/* Bottom Visual & CTA */}
+            <div className="space-y-4 pt-2">
+              <div className="rounded-xl border border-slate-200/80 overflow-hidden shadow-xs h-56 bg-slate-900">
+                <img
+                  src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80"
+                  alt="Software Engineering Team"
+                  className="w-full h-full object-cover opacity-95"
+                />
               </div>
 
-              <div className="p-3 bg-slate-50 rounded border border-slate-200">
-                <div className="font-bold text-slate-900 mb-0.5">E-commerce Stores</div>
-                <div className="text-[11px] text-slate-600">Custom online shopping platforms & payment gateways.</div>
-              </div>
-
-              <div className="p-3 bg-slate-50 rounded border border-slate-200">
-                <div className="font-bold text-slate-900 mb-0.5">Custom Software</div>
-                <div className="text-[11px] text-slate-600">CRMs, ERPs, and automated workflow backends.</div>
-              </div>
-
-              <div className="p-3 bg-slate-50 rounded border border-slate-200">
-                <div className="font-bold text-slate-900 mb-0.5">Mobile Applications</div>
-                <div className="text-[11px] text-slate-600">Cross-platform iOS and Android apps with React Native.</div>
-              </div>
-            </div>
-
-            <div className="pt-2 border-t border-slate-100 flex items-center justify-between">
-              <span className="text-xs text-slate-500 font-medium">Have a technical requirement?</span>
-              <Link
-                to="/services/it"
-                className="px-4 py-2 text-xs font-semibold text-white bg-blue-600 hover:bg-blue-700 rounded transition-colors shadow-2xs"
+              <button
+                onClick={() => onOpenInquiry('service', 'Discuss IT Services')}
+                className="px-5 py-2.5 text-xs font-semibold text-white bg-blue-600 hover:bg-blue-700 rounded-lg transition-colors shadow-2xs"
               >
-                Discuss IT Project &rarr;
+                Discuss Your Project
+              </button>
+            </div>
+          </div>
+
+          {/* Card 2: DIGITAL MARKETING & AI */}
+          <div className="bg-emerald-50/40 rounded-2xl p-6 sm:p-8 border border-emerald-100/80 flex flex-col justify-between gap-6">
+            <div className="space-y-4">
+              <span className="text-xs font-bold text-emerald-600 uppercase tracking-widest block">
+                DIGITAL MARKETING & AI
+              </span>
+
+              <h3 className="text-2xl font-bold text-slate-900 leading-tight">
+                Grow your business with our expertise
+              </h3>
+
+              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                Data-driven marketing strategies and AI solutions to help you stay ahead.
+              </p>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-2.5 pt-2 text-xs font-medium text-slate-700">
+                <div className="flex items-center gap-2">
+                  <Check className="w-4 h-4 text-emerald-600 shrink-0" />
+                  <span>SEO & Performance Marketing</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Check className="w-4 h-4 text-emerald-600 shrink-0" />
+                  <span>Social Media Management</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Check className="w-4 h-4 text-emerald-600 shrink-0" />
+                  <span>AI Chatbots & Automation</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Check className="w-4 h-4 text-emerald-600 shrink-0" />
+                  <span>AI-Powered Workflows</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Bottom Visual & CTA */}
+            <div className="space-y-4 pt-2">
+              <div className="rounded-xl border border-slate-200/80 overflow-hidden shadow-xs h-56 bg-slate-900">
+                <img
+                  src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=800&q=80"
+                  alt="Marketing & AI Analytics App"
+                  className="w-full h-full object-cover opacity-95"
+                />
+              </div>
+
+              <button
+                onClick={() => onOpenInquiry('service', 'Discuss Marketing & AI')}
+                className="px-5 py-2.5 text-xs font-semibold text-white bg-emerald-600 hover:bg-emerald-700 rounded-lg transition-colors shadow-2xs"
+              >
+                Explore Solutions
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      {/* ---------------------------------------------------- */}
+      {/* SECTION 5: STATISTICS STRIP */}
+      {/* ---------------------------------------------------- */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="bg-white rounded-2xl border border-slate-200/80 p-6 sm:p-8 shadow-2xs grid grid-cols-2 md:grid-cols-4 gap-6 text-center md:text-left">
+          
+          <div className="flex items-center gap-4">
+            <div className="w-12 h-12 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center shrink-0">
+              <Users className="w-6 h-6" />
+            </div>
+            <div>
+              <div className="text-2xl font-extrabold text-slate-900">10K+</div>
+              <div className="text-xs text-slate-500 font-medium">Happy Learners</div>
+            </div>
+          </div>
+
+          <div className="flex items-center gap-4">
+            <div className="w-12 h-12 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center shrink-0">
+              <Users className="w-6 h-6" />
+            </div>
+            <div>
+              <div className="text-2xl font-extrabold text-slate-900">200+</div>
+              <div className="text-xs text-slate-500 font-medium">Expert Instructors</div>
+            </div>
+          </div>
+
+          <div className="flex items-center gap-4">
+            <div className="w-12 h-12 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center shrink-0">
+              <Download className="w-6 h-6" />
+            </div>
+            <div>
+              <div className="text-2xl font-extrabold text-slate-900">100+</div>
+              <div className="text-xs text-slate-500 font-medium">Courses</div>
+            </div>
+          </div>
+
+          <div className="flex items-center gap-4">
+            <div className="w-12 h-12 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center shrink-0">
+              <ShieldCheck className="w-6 h-6" />
+            </div>
+            <div>
+              <div className="text-2xl font-extrabold text-slate-900">95%</div>
+              <div className="text-xs text-slate-500 font-medium">Satisfaction Rate</div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      {/* ---------------------------------------------------- */}
+      {/* SECTION 6: WHAT OUR LEARNERS SAY */}
+      {/* ---------------------------------------------------- */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
+        <div className="flex items-end justify-between">
+          <div>
+            <span className="text-xs font-bold text-blue-600 uppercase tracking-widest block mb-1">
+              WHAT OUR LEARNERS SAY
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900">
+              Real stories from real people
+            </h2>
+          </div>
+          <Link
+            to="/about"
+            className="text-xs font-semibold text-blue-600 hover:text-blue-700 inline-flex items-center gap-1"
+          >
+            <span>View All Testimonials</span>
+            <ArrowRight className="w-3.5 h-3.5" />
+          </Link>
+        </div>
+
+        {/* 3 Testimonials */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {displayTestimonials.map(item => (
+            <div key={item.id} className="p-6 bg-white rounded-2xl border border-slate-200/80 shadow-2xs flex flex-col justify-between space-y-4">
+              <div className="space-y-3">
+                <div className="flex items-center gap-1">
+                  {[...Array(item.rating)].map((_, i) => (
+                    <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
+                  ))}
+                </div>
+
+                <p className="text-xs text-slate-700 leading-relaxed">
+                  "{item.feedback}"
+                </p>
+              </div>
+
+              <div className="pt-3 border-t border-slate-100 flex items-center gap-3">
+                <img
+                  src={item.avatar}
+                  alt={item.name}
+                  className="w-10 h-10 rounded-full object-cover border border-slate-200"
+                />
+                <div>
+                  <div className="text-xs font-bold text-slate-900">{item.name}</div>
+                  <div className="text-[11px] text-slate-500">{item.role}</div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* ---------------------------------------------------- */}
+      {/* SECTION 7: READY TO TAKE THE NEXT STEP? (CTA BANNER) */}
+      {/* ---------------------------------------------------- */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="bg-gradient-to-r from-blue-700 via-blue-800 to-indigo-900 text-white rounded-3xl p-8 sm:p-12 relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-8 shadow-xl">
+          
+          {/* Left Text & Action Buttons */}
+          <div className="space-y-4 max-w-xl z-10">
+            <h2 className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">
+              Ready to take the next step?
+            </h2>
+
+            <p className="text-xs sm:text-sm text-blue-100 leading-relaxed">
+              Start learning new skills or talk to us about your technology needs.
+            </p>
+
+            <div className="flex flex-wrap items-center gap-3 pt-2">
+              <Link
+                to="/courses"
+                className="px-6 py-2.5 text-xs font-semibold text-slate-900 bg-white hover:bg-slate-100 rounded-lg transition-colors shadow-2xs"
+              >
+                Explore Courses
+              </Link>
+
+              <Link
+                to="/contact"
+                className="px-6 py-2.5 text-xs font-semibold text-white border border-white/60 hover:bg-white/10 rounded-lg transition-colors"
+              >
+                Contact Us
               </Link>
             </div>
           </div>
 
-        </div>
-      </section>
-
-      {/* ---------------------------------------------------- */}
-      {/* SECTION 6: DIGITAL MARKETING + AI (Dual Visual Columns) */}
-      {/* ---------------------------------------------------- */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="space-y-6">
-          <div>
-            <span className="text-xs font-bold text-blue-600 uppercase tracking-widest block mb-1">
-              GROWTH & AUTOMATION
-            </span>
-            <h2 className="text-2xl sm:text-3xl font-bold text-slate-900">
-              Digital Marketing & AI Solutions
-            </h2>
+          {/* Right Visual Image Cutout */}
+          <div className="relative w-full md:w-80 h-56 md:h-64 shrink-0 flex items-center justify-center">
+            <img
+              src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80"
+              alt="Join TechSetu"
+              className="w-full h-full object-cover rounded-2xl shadow-lg border border-white/20"
+            />
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-            
-            {/* Left Card: Digital Marketing with Visual Banner */}
-            <div className="bg-white rounded-xl border border-slate-200 overflow-hidden shadow-2xs flex flex-col justify-between">
-              <div>
-                <div className="h-44 relative bg-slate-900 overflow-hidden">
-                  <img
-                    src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=800&q=80"
-                    alt="Digital Marketing Analytics"
-                    className="w-full h-full object-cover opacity-85"
-                  />
-                  <div className="absolute top-3 left-3 bg-blue-600 text-white text-[10px] font-bold px-2 py-0.5 rounded">
-                    MARKETING & GROWTH
-                  </div>
-                </div>
-
-                <div className="p-6 space-y-4">
-                  <h3 className="text-xl font-bold text-slate-900">Performance Digital Marketing</h3>
-                  <p className="text-xs text-slate-600 leading-relaxed">
-                    Data-driven customer acquisition strategies to scale qualified inbound leads and maximize marketing ROI.
-                  </p>
-
-                  <ul className="space-y-2 text-xs text-slate-700">
-                    <li className="flex items-center gap-2">
-                      <Check className="w-4 h-4 text-blue-600 shrink-0" />
-                      <span>Search Engine Optimization (SEO) & Technical Audits</span>
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <Check className="w-4 h-4 text-blue-600 shrink-0" />
-                      <span>Google Search & Performance Max Campaigns</span>
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <Check className="w-4 h-4 text-blue-600 shrink-0" />
-                      <span>Meta Paid Acquisition (Facebook & Instagram Ads)</span>
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <Check className="w-4 h-4 text-blue-600 shrink-0" />
-                      <span>GA4 Conversion Analytics & Lead Funnels</span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-
-              <div className="p-6 pt-0 border-t border-slate-100 mt-4 flex items-center justify-between">
-                <span className="text-xs font-semibold text-slate-500">Measurable Lead Scaling</span>
-                <Link to="/services/digital-marketing" className="text-xs font-bold text-blue-600 hover:underline">
-                  View Marketing Services &rarr;
-                </Link>
-              </div>
-            </div>
-
-            {/* Right Card: AI Services with Visual Banner */}
-            <div className="bg-white rounded-xl border border-slate-200 overflow-hidden shadow-2xs flex flex-col justify-between">
-              <div>
-                <div className="h-44 relative bg-slate-900 overflow-hidden">
-                  <img
-                    src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=800&q=80"
-                    alt="AI Technology & Chatbots"
-                    className="w-full h-full object-cover opacity-85"
-                  />
-                  <div className="absolute top-3 left-3 bg-blue-600 text-white text-[10px] font-bold px-2 py-0.5 rounded">
-                    ENTERPRISE AI
-                  </div>
-                </div>
-
-                <div className="p-6 space-y-4">
-                  <h3 className="text-xl font-bold text-slate-900">Custom AI & Workflow Automation</h3>
-                  <p className="text-xs text-slate-600 leading-relaxed">
-                    Deploy modern artificial intelligence pipelines to automate routine business tasks and document processing.
-                  </p>
-
-                  <ul className="space-y-2 text-xs text-slate-700">
-                    <li className="flex items-center gap-2">
-                      <Check className="w-4 h-4 text-blue-600 shrink-0" />
-                      <span>Custom RAG AI Chatbots (Trained on company docs)</span>
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <Check className="w-4 h-4 text-blue-600 shrink-0" />
-                      <span>AI Document Extraction & PDF Processing Pipelines</span>
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <Check className="w-4 h-4 text-blue-600 shrink-0" />
-                      <span>Fine-tuned Open-Source LLMs for Enterprise</span>
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <Check className="w-4 h-4 text-blue-600 shrink-0" />
-                      <span>Private VPC AI Deployments & Zero Data Leakage</span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-
-              <div className="p-6 pt-0 border-t border-slate-100 mt-4 flex items-center justify-between">
-                <span className="text-xs font-semibold text-slate-500">Secure AI Architecture</span>
-                <Link to="/services/ai" className="text-xs font-bold text-blue-600 hover:underline">
-                  View AI Services &rarr;
-                </Link>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </section>
-
-      {/* ---------------------------------------------------- */}
-      {/* SECTION 7: WHY TECHSETU */}
-      {/* ---------------------------------------------------- */}
-      <section className="bg-slate-50 py-12 sm:py-16 border-y border-slate-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
-          <div>
-            <span className="text-xs font-bold text-blue-600 uppercase tracking-widest block mb-1">
-              OUR STANDARDS
-            </span>
-            <h2 className="text-2xl sm:text-3xl font-bold text-slate-900">
-              Why Choose TechSetu
-            </h2>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-            <div className="p-5 bg-white rounded-lg border border-slate-200 space-y-2">
-              <BookOpen className="w-5 h-5 text-blue-600" />
-              <h3 className="text-base font-bold text-slate-900">Practical Learning</h3>
-              <p className="text-xs text-slate-600 leading-relaxed">
-                Focus on real hands-on code projects, git repositories, and practical exercises.
-              </p>
-            </div>
-
-            <div className="p-5 bg-white rounded-lg border border-slate-200 space-y-2">
-              <Users className="w-5 h-5 text-blue-600" />
-              <h3 className="text-base font-bold text-slate-900">Expert Guidance</h3>
-              <p className="text-xs text-slate-600 leading-relaxed">
-                Learn directly from experienced software architects and growth practitioners.
-              </p>
-            </div>
-
-            <div className="p-5 bg-white rounded-lg border border-slate-200 space-y-2">
-              <Target className="w-5 h-5 text-blue-600" />
-              <h3 className="text-base font-bold text-slate-900">Career Focused</h3>
-              <p className="text-xs text-slate-600 leading-relaxed">
-                Curricula aligned with current job market requirements in top tech companies.
-              </p>
-            </div>
-
-            <div className="p-5 bg-white rounded-lg border border-slate-200 space-y-2">
-              <ShieldCheck className="w-5 h-5 text-blue-600" />
-              <h3 className="text-base font-bold text-slate-900">Technology Solutions</h3>
-              <p className="text-xs text-slate-600 leading-relaxed">
-                Reliable engineering services to build, scale, and maintain software applications.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ---------------------------------------------------- */}
-      {/* SECTION 8: SOCIAL PROOF / TESTIMONIALS */}
-      {/* ---------------------------------------------------- */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="space-y-8">
-          <div>
-            <span className="text-xs font-bold text-blue-600 uppercase tracking-widest block mb-1">
-              TESTIMONIALS
-            </span>
-            <h2 className="text-2xl sm:text-3xl font-bold text-slate-900">
-              What learners & clients say
-            </h2>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {displayTestimonials.map(item => (
-              <div key={item.id} className="p-6 bg-white rounded-xl border border-slate-200 flex flex-col justify-between space-y-4 shadow-2xs">
-                <div className="space-y-3">
-                  <div className="flex items-center gap-1">
-                    {[...Array(item.rating)].map((_, i) => (
-                      <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
-                    ))}
-                  </div>
-
-                  <p className="text-xs text-slate-700 leading-relaxed italic">
-                    "{item.feedback}"
-                  </p>
-                </div>
-
-                <div className="pt-3 border-t border-slate-100 flex items-center gap-3">
-                  <img
-                    src={item.avatar}
-                    alt={item.name}
-                    className="w-10 h-10 rounded-full object-cover border border-slate-200"
-                  />
-                  <div>
-                    <div className="text-xs font-bold text-slate-900">{item.name}</div>
-                    <div className="text-[11px] text-slate-500">{item.role} &bull; {item.companyOrCollege}</div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ---------------------------------------------------- */}
-      {/* SECTION 9: BRANDED FINAL CTA */}
-      {/* ---------------------------------------------------- */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-slate-900 text-white rounded-xl p-8 sm:p-12 text-center space-y-4 border border-slate-800 shadow-xl">
-          <span className="text-xs font-bold text-blue-400 uppercase tracking-widest">
-            GET STARTED TODAY
-          </span>
-          <h2 className="text-2xl sm:text-4xl font-extrabold tracking-tight">
-            Ready to take the next step?
-          </h2>
-          <p className="text-xs sm:text-sm text-slate-300 max-w-lg mx-auto leading-relaxed">
-            Start learning career-ready tech skills or consult with our engineering team for your business project.
-          </p>
-
-          <div className="flex flex-wrap items-center justify-center gap-3 pt-4">
-            <Link
-              to="/courses"
-              className="px-6 py-3 text-sm font-semibold text-slate-900 bg-white hover:bg-slate-100 rounded-md transition-colors shadow-2xs"
-            >
-              Explore Courses
-            </Link>
-
-            <Link
-              to="/contact"
-              className="px-6 py-3 text-sm font-semibold text-white border border-slate-700 hover:bg-slate-800 rounded-md transition-colors"
-            >
-              Contact Us
-            </Link>
-          </div>
         </div>
       </section>
 

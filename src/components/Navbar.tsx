@@ -20,13 +20,13 @@ export const Navbar: React.FC<NavbarProps> = ({
   }, [location]);
 
   return (
-    <header className="sticky top-0 z-40 w-full bg-white border-b border-slate-200">
+    <header className="sticky top-0 z-40 w-full bg-white border-b border-slate-200/80 shadow-2xs">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 sm:h-18">
           
           {/* Left: Brand Logo */}
-          <Link to="/" className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded bg-blue-600 text-white flex items-center justify-center font-bold text-base">
+          <Link to="/" className="flex items-center gap-2.5">
+            <div className="w-8 h-8 rounded-lg bg-blue-600 text-white flex items-center justify-center font-bold text-base shadow-xs">
               TS
             </div>
             <div className="flex flex-col">
@@ -40,11 +40,11 @@ export const Navbar: React.FC<NavbarProps> = ({
           </Link>
 
           {/* Center Navigation Links */}
-          <nav className="hidden md:flex items-center gap-6">
+          <nav className="hidden md:flex items-center gap-7">
             <Link
               to="/courses"
               className={`text-sm font-medium transition-colors ${
-                location.pathname === '/courses'
+                location.pathname === '/courses' && !location.search
                   ? 'text-blue-600 font-semibold'
                   : 'text-slate-700 hover:text-blue-600'
               }`}
@@ -84,27 +84,31 @@ export const Navbar: React.FC<NavbarProps> = ({
             >
               AI Services
             </Link>
+
+            <Link
+              to="/courses"
+              className={`text-sm font-medium transition-colors ${
+                location.pathname === '/courses'
+                  ? 'text-blue-600 font-semibold'
+                  : 'text-slate-700 hover:text-blue-600'
+              }`}
+            >
+              Courses
+            </Link>
           </nav>
 
           {/* Right Action Items */}
           <div className="hidden md:flex items-center gap-4">
-            <Link
-              to="/courses"
-              className="text-sm font-medium text-slate-700 hover:text-blue-600 transition-colors"
-            >
-              Courses
-            </Link>
-
             <button
               onClick={() => onOpenPortal('student')}
-              className="text-sm font-medium text-slate-700 hover:text-blue-600 transition-colors"
+              className="text-sm font-medium text-slate-700 hover:text-blue-600 transition-colors px-2 py-1"
             >
               Login
             </button>
 
             <button
               onClick={() => onOpenInquiry('course')}
-              className="px-4 py-2 text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 rounded-md transition-colors shadow-2xs"
+              className="px-4 py-2 text-sm font-semibold text-white bg-blue-600 hover:bg-blue-700 rounded-lg transition-colors shadow-2xs"
             >
               Get Started
             </button>
@@ -124,7 +128,7 @@ export const Navbar: React.FC<NavbarProps> = ({
         </div>
       </div>
 
-      {/* Simple Mobile Menu */}
+      {/* Mobile Menu */}
       {mobileMenuOpen && (
         <div className="md:hidden border-b border-slate-200 bg-white px-4 pt-2 pb-6 space-y-3">
           <nav className="flex flex-col space-y-2">
@@ -153,16 +157,10 @@ export const Navbar: React.FC<NavbarProps> = ({
               AI Services
             </Link>
             <Link
-              to="/about"
+              to="/courses"
               className="px-3 py-2 text-sm font-medium text-slate-800 hover:bg-slate-50 rounded-md"
             >
-              About
-            </Link>
-            <Link
-              to="/contact"
-              className="px-3 py-2 text-sm font-medium text-slate-800 hover:bg-slate-50 rounded-md"
-            >
-              Contact
+              Courses
             </Link>
           </nav>
 
