@@ -128,133 +128,129 @@ export const HomePage: React.FC<HomePageProps> = ({
           </h2>
         </div>
 
-        {/* 4 Cards Grid */}
+        {/* 4 Cards Grid (Exact Reference Split-Card Design) */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           
           {/* Card 1: Education */}
-          <div className="bg-white rounded-xl border border-slate-200 overflow-hidden shadow-2xs hover:shadow-md transition-all flex flex-col justify-between group">
-            <div>
-              <div className="relative h-40 bg-slate-100">
-                <img
-                  src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=600&q=80"
-                  alt="Education"
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute -bottom-4 left-4 w-10 h-10 rounded-xl bg-blue-600 text-white flex items-center justify-center shadow-md">
-                  <GraduationCap className="w-5 h-5" />
-                </div>
-              </div>
-
-              <div className="p-5 pt-7 space-y-2">
-                <h3 className="text-base font-bold text-slate-900 group-hover:text-blue-600 transition-colors">
-                  Education
-                </h3>
-                <p className="text-xs text-slate-600 leading-relaxed">
-                  Online courses, live classes, recorded lectures and certifications.
-                </p>
-              </div>
+          <div className="bg-white rounded-2xl border border-slate-200/80 overflow-hidden shadow-sm hover:shadow-md transition-all relative flex flex-col justify-between p-6 min-h-[250px] group">
+            <div className="absolute top-0 right-0 bottom-0 w-3/5 overflow-hidden pointer-events-none">
+              <img
+                src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=80"
+                alt="Education"
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90"
+              />
+              <div className="absolute inset-0 bg-gradient-to-r from-white via-white/90 to-transparent"></div>
             </div>
 
-            <div className="px-5 pb-5 pt-1">
-              <Link to="/courses" className="text-xs font-semibold text-blue-600 hover:text-blue-700 inline-flex items-center gap-1">
+            <div className="relative z-10 space-y-3 max-w-[70%]">
+              <div className="w-10 h-10 rounded-full bg-blue-600 text-white flex items-center justify-center shadow-xs">
+                <GraduationCap className="w-5 h-5" />
+              </div>
+              <h3 className="text-lg font-bold text-slate-900 group-hover:text-blue-600 transition-colors">
+                Education
+              </h3>
+              <p className="text-xs text-slate-600 leading-relaxed font-normal">
+                Online courses, live classes, recorded lectures and certifications.
+              </p>
+            </div>
+
+            <div className="relative z-10 pt-4">
+              <Link to="/courses" className="text-xs font-semibold text-blue-600 hover:text-blue-700 inline-flex items-center gap-1 group/link">
                 <span>Explore Education</span>
-                <ArrowRight className="w-3.5 h-3.5" />
+                <ArrowRight className="w-3.5 h-3.5 group-hover/link:translate-x-1 transition-transform" />
               </Link>
             </div>
           </div>
 
           {/* Card 2: IT Services */}
-          <div className="bg-white rounded-xl border border-slate-200 overflow-hidden shadow-2xs hover:shadow-md transition-all flex flex-col justify-between group">
-            <div>
-              <div className="relative h-40 bg-slate-100">
-                <img
-                  src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=600&q=80"
-                  alt="IT Services"
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute -bottom-4 left-4 w-10 h-10 rounded-xl bg-emerald-500 text-white flex items-center justify-center shadow-md">
-                  <Code className="w-5 h-5" />
-                </div>
-              </div>
-
-              <div className="p-5 pt-7 space-y-2">
-                <h3 className="text-base font-bold text-slate-900 group-hover:text-blue-600 transition-colors">
-                  IT Services
-                </h3>
-                <p className="text-xs text-slate-600 leading-relaxed">
-                  Custom software, web, and mobile application development.
-                </p>
-              </div>
+          <div className="bg-white rounded-2xl border border-slate-200/80 overflow-hidden shadow-sm hover:shadow-md transition-all relative flex flex-col justify-between p-6 min-h-[250px] group">
+            <div className="absolute top-0 right-0 bottom-0 w-3/5 overflow-hidden pointer-events-none">
+              <img
+                src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=600&q=80"
+                alt="IT Services"
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90"
+              />
+              <div className="absolute inset-0 bg-gradient-to-r from-white via-white/90 to-transparent"></div>
             </div>
 
-            <div className="px-5 pb-5 pt-1">
-              <Link to="/services/it" className="text-xs font-semibold text-blue-600 hover:text-blue-700 inline-flex items-center gap-1">
+            <div className="relative z-10 space-y-3 max-w-[70%]">
+              <div className="w-10 h-10 rounded-full bg-emerald-500 text-white flex items-center justify-center shadow-xs">
+                <Code className="w-5 h-5" />
+              </div>
+              <h3 className="text-lg font-bold text-slate-900 group-hover:text-blue-600 transition-colors">
+                IT Services
+              </h3>
+              <p className="text-xs text-slate-600 leading-relaxed font-normal">
+                Custom software, web and mobile application development.
+              </p>
+            </div>
+
+            <div className="relative z-10 pt-4">
+              <Link to="/services/it" className="text-xs font-semibold text-blue-600 hover:text-blue-700 inline-flex items-center gap-1 group/link">
                 <span>Explore IT Services</span>
-                <ArrowRight className="w-3.5 h-3.5" />
+                <ArrowRight className="w-3.5 h-3.5 group-hover/link:translate-x-1 transition-transform" />
               </Link>
             </div>
           </div>
 
           {/* Card 3: Digital Marketing */}
-          <div className="bg-white rounded-xl border border-slate-200 overflow-hidden shadow-2xs hover:shadow-md transition-all flex flex-col justify-between group">
-            <div>
-              <div className="relative h-40 bg-slate-100">
-                <img
-                  src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=80"
-                  alt="Digital Marketing"
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute -bottom-4 left-4 w-10 h-10 rounded-xl bg-amber-500 text-white flex items-center justify-center shadow-md">
-                  <BarChart3 className="w-5 h-5" />
-                </div>
-              </div>
-
-              <div className="p-5 pt-7 space-y-2">
-                <h3 className="text-base font-bold text-slate-900 group-hover:text-blue-600 transition-colors">
-                  Digital Marketing
-                </h3>
-                <p className="text-xs text-slate-600 leading-relaxed">
-                  Grow your brand, generate leads and increase your revenue.
-                </p>
-              </div>
+          <div className="bg-white rounded-2xl border border-slate-200/80 overflow-hidden shadow-sm hover:shadow-md transition-all relative flex flex-col justify-between p-6 min-h-[250px] group">
+            <div className="absolute top-0 right-0 bottom-0 w-3/5 overflow-hidden pointer-events-none">
+              <img
+                src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=80"
+                alt="Digital Marketing"
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90"
+              />
+              <div className="absolute inset-0 bg-gradient-to-r from-white via-white/90 to-transparent"></div>
             </div>
 
-            <div className="px-5 pb-5 pt-1">
-              <Link to="/services/digital-marketing" className="text-xs font-semibold text-blue-600 hover:text-blue-700 inline-flex items-center gap-1">
+            <div className="relative z-10 space-y-3 max-w-[70%]">
+              <div className="w-10 h-10 rounded-full bg-amber-500 text-white flex items-center justify-center shadow-xs">
+                <BarChart3 className="w-5 h-5" />
+              </div>
+              <h3 className="text-lg font-bold text-slate-900 group-hover:text-blue-600 transition-colors">
+                Digital Marketing
+              </h3>
+              <p className="text-xs text-slate-600 leading-relaxed font-normal">
+                Grow your brand, generate leads and increase your revenue.
+              </p>
+            </div>
+
+            <div className="relative z-10 pt-4">
+              <Link to="/services/digital-marketing" className="text-xs font-semibold text-blue-600 hover:text-blue-700 inline-flex items-center gap-1 group/link">
                 <span>Explore Marketing</span>
-                <ArrowRight className="w-3.5 h-3.5" />
+                <ArrowRight className="w-3.5 h-3.5 group-hover/link:translate-x-1 transition-transform" />
               </Link>
             </div>
           </div>
 
           {/* Card 4: AI Services */}
-          <div className="bg-white rounded-xl border border-slate-200 overflow-hidden shadow-2xs hover:shadow-md transition-all flex flex-col justify-between group">
-            <div>
-              <div className="relative h-40 bg-slate-100">
-                <img
-                  src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=600&q=80"
-                  alt="AI Services"
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute -bottom-4 left-4 w-10 h-10 rounded-xl bg-purple-600 text-white flex items-center justify-center shadow-md">
-                  <Bot className="w-5 h-5" />
-                </div>
-              </div>
-
-              <div className="p-5 pt-7 space-y-2">
-                <h3 className="text-base font-bold text-slate-900 group-hover:text-blue-600 transition-colors">
-                  AI Services
-                </h3>
-                <p className="text-xs text-slate-600 leading-relaxed">
-                  AI chatbots, automation and intelligent business solutions.
-                </p>
-              </div>
+          <div className="bg-white rounded-2xl border border-slate-200/80 overflow-hidden shadow-sm hover:shadow-md transition-all relative flex flex-col justify-between p-6 min-h-[250px] group">
+            <div className="absolute top-0 right-0 bottom-0 w-3/5 overflow-hidden pointer-events-none">
+              <img
+                src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=600&q=80"
+                alt="AI Services"
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90"
+              />
+              <div className="absolute inset-0 bg-gradient-to-r from-white via-white/90 to-transparent"></div>
             </div>
 
-            <div className="px-5 pb-5 pt-1">
-              <Link to="/services/ai" className="text-xs font-semibold text-blue-600 hover:text-blue-700 inline-flex items-center gap-1">
+            <div className="relative z-10 space-y-3 max-w-[70%]">
+              <div className="w-10 h-10 rounded-full bg-purple-600 text-white flex items-center justify-center shadow-xs">
+                <Bot className="w-5 h-5" />
+              </div>
+              <h3 className="text-lg font-bold text-slate-900 group-hover:text-blue-600 transition-colors">
+                AI Services
+              </h3>
+              <p className="text-xs text-slate-600 leading-relaxed font-normal">
+                AI chatbots, automation and intelligent business solutions.
+              </p>
+            </div>
+
+            <div className="relative z-10 pt-4">
+              <Link to="/services/ai" className="text-xs font-semibold text-blue-600 hover:text-blue-700 inline-flex items-center gap-1 group/link">
                 <span>Explore AI Services</span>
-                <ArrowRight className="w-3.5 h-3.5" />
+                <ArrowRight className="w-3.5 h-3.5 group-hover/link:translate-x-1 transition-transform" />
               </Link>
             </div>
           </div>
