@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import {
-  GraduationCap, Code, BarChart3, Bot, Video, BookOpen, Award, CheckCircle2,
-  Users, Download, ShieldCheck, Star, Check, ArrowRight, UserCheck
+  GraduationCap, Code, BarChart3, Bot, BookOpen, Award, CheckCircle2,
+  Users, Download, ShieldCheck, Star, Check, ArrowRight, UserCheck, MonitorPlay
 } from 'lucide-react';
 import { CourseCard } from '../components/CourseCard';
 import { COURSES } from '../data/courses';
@@ -27,16 +27,24 @@ export const HomePage: React.FC<HomePageProps> = ({
       {/* ---------------------------------------------------- */}
       {/* SECTION 1: HERO SECTION */}
       {/* ---------------------------------------------------- */}
-      <section className="relative pt-8 sm:pt-14 pb-12 sm:pb-20 bg-gradient-to-b from-blue-50/30 via-slate-50/40 to-white border-b border-slate-200/60">
+      <section className="relative pt-8 sm:pt-14 pb-12 sm:pb-20 bg-gradient-to-b from-slate-50/60 via-blue-50/20 to-white border-b border-slate-200/60 overflow-hidden">
+        
+        {/* Subtle Decorative Dot Matrix Grid (Top Right) */}
+        <div className="absolute top-10 right-12 hidden lg:grid grid-cols-4 gap-2 opacity-30 pointer-events-none">
+          {[...Array(12)].map((_, i) => (
+            <div key={i} className="w-1.5 h-1.5 rounded-full bg-slate-400"></div>
+          ))}
+        </div>
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
             
             {/* Left Column Content */}
-            <div className="lg:col-span-7 space-y-6">
+            <div className="lg:col-span-7 space-y-6 z-10">
               
               {/* Pill Badge */}
-              <div className="inline-flex items-center gap-2 px-3 py-1 bg-blue-50 text-blue-600 border border-blue-100 rounded-full text-xs font-semibold">
-                <span className="w-2 h-2 rounded-full bg-blue-600"></span>
+              <div className="inline-flex items-center gap-2 px-3.5 py-1 bg-blue-50/80 text-blue-600 border border-blue-100/90 rounded-full text-xs font-semibold">
+                <span className="w-2 h-2 rounded-full bg-blue-600 animate-pulse"></span>
                 <span>Trusted by 10K+ Learners</span>
               </div>
 
@@ -47,7 +55,7 @@ export const HomePage: React.FC<HomePageProps> = ({
               </h1>
 
               {/* Subtitle */}
-              <p className="text-base sm:text-lg text-slate-600 leading-relaxed max-w-xl">
+              <p className="text-base sm:text-lg text-slate-600 leading-relaxed max-w-lg">
                 Learn practical skills, build your career and grow your business with technology.
               </p>
 
@@ -55,14 +63,14 @@ export const HomePage: React.FC<HomePageProps> = ({
               <div className="flex flex-wrap items-center gap-3 pt-1">
                 <Link
                   to="/courses"
-                  className="px-6 py-3 text-sm font-semibold text-white bg-blue-600 hover:bg-blue-700 rounded-lg transition-colors shadow-2xs"
+                  className="px-6 py-3 text-sm font-semibold text-white bg-blue-600 hover:bg-blue-700 rounded-xl transition-colors shadow-2xs"
                 >
                   Explore Courses
                 </Link>
 
                 <Link
                   to="/services"
-                  className="px-6 py-3 text-sm font-semibold text-slate-800 bg-white hover:bg-slate-50 border border-slate-200 rounded-lg transition-colors shadow-2xs"
+                  className="px-6 py-3 text-sm font-semibold text-slate-800 bg-white hover:bg-slate-50 border border-slate-200/90 rounded-xl transition-colors shadow-2xs"
                 >
                   Our Services
                 </Link>
@@ -71,45 +79,49 @@ export const HomePage: React.FC<HomePageProps> = ({
               {/* Bottom Feature Badges */}
               <div className="pt-6 border-t border-slate-200/70 grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs font-medium text-slate-700">
                 <div className="flex items-center gap-2">
-                  <UserCheck className="w-4 h-4 text-blue-600 shrink-0" />
+                  <UserCheck className="w-4.5 h-4.5 text-blue-600 shrink-0" />
                   <span>Expert Instructors</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <BookOpen className="w-4 h-4 text-blue-600 shrink-0" />
+                  <BookOpen className="w-4.5 h-4.5 text-blue-600 shrink-0" />
                   <span>Practical Learning</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <Award className="w-4 h-4 text-blue-600 shrink-0" />
+                  <Award className="w-4.5 h-4.5 text-blue-600 shrink-0" />
                   <span>Industry Recognized</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-blue-600 shrink-0" />
+                  <CheckCircle2 className="w-4.5 h-4.5 text-blue-600 shrink-0" />
                   <span>Certificates</span>
                 </div>
               </div>
 
             </div>
 
-            {/* Right Column Visual (Main Student Image + Floating Widget Card) */}
+            {/* Right Column Visual (Cropped Reference Student Image + Floating Widget Card) */}
             <div className="lg:col-span-5 relative flex items-center justify-center lg:justify-end">
               <div className="relative w-full max-w-md lg:max-w-none">
                 
-                {/* Main Hero Photo (Professional learning at desk with lamp) */}
-                <div className="rounded-2xl overflow-hidden shadow-lg border border-slate-200/80 bg-slate-900 h-[380px] sm:h-[440px]">
+                {/* Main Hero Photo (Exact developer at desk photo) */}
+                <div className="rounded-2xl overflow-hidden shadow-xl border border-slate-200/80 bg-slate-900 h-[380px] sm:h-[440px]">
                   <img
-                    src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1000&q=80"
+                    src="/hero_man_desk.png"
                     alt="TechSetu Professional Student Learning"
                     className="w-full h-full object-cover opacity-95"
+                    onError={(e) => {
+                      // Fallback if local asset is loading
+                      (e.target as HTMLImageElement).src = "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1000&q=80";
+                    }}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-transparent"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/30 via-transparent to-transparent"></div>
                 </div>
 
-                {/* Floating Info Widget Card (Right Side) */}
-                <div className="absolute top-6 right-[-10px] sm:right-[-20px] bg-white/95 backdrop-blur-md rounded-2xl shadow-xl border border-slate-100 p-4 space-y-3.5 text-xs w-60 z-10">
+                {/* Floating Info Widget Card (Right Side Overlay) */}
+                <div className="absolute top-8 right-[-10px] sm:right-[-20px] bg-white/95 backdrop-blur-md rounded-2xl shadow-2xl border border-slate-100 p-4 space-y-4 text-xs w-60 z-20">
                   
                   <div className="flex items-center gap-3">
-                    <div className="w-8 h-8 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center shrink-0">
-                      <Video className="w-4 h-4" />
+                    <div className="w-9 h-9 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center shrink-0">
+                      <MonitorPlay className="w-4.5 h-4.5" />
                     </div>
                     <div>
                       <div className="font-bold text-slate-900">Live Classes</div>
@@ -118,8 +130,8 @@ export const HomePage: React.FC<HomePageProps> = ({
                   </div>
 
                   <div className="flex items-center gap-3 pt-1 border-t border-slate-100">
-                    <div className="w-8 h-8 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center shrink-0">
-                      <BookOpen className="w-4 h-4" />
+                    <div className="w-9 h-9 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center shrink-0">
+                      <BookOpen className="w-4.5 h-4.5" />
                     </div>
                     <div>
                       <div className="font-bold text-slate-900">100+ Courses</div>
@@ -128,8 +140,8 @@ export const HomePage: React.FC<HomePageProps> = ({
                   </div>
 
                   <div className="flex items-center gap-3 pt-1 border-t border-slate-100">
-                    <div className="w-8 h-8 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center shrink-0">
-                      <Award className="w-4 h-4" />
+                    <div className="w-9 h-9 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center shrink-0">
+                      <Award className="w-4.5 h-4.5" />
                     </div>
                     <div>
                       <div className="font-bold text-slate-900">Certificates</div>
